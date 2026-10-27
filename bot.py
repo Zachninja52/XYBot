@@ -4,7 +4,7 @@ import os
 import json
 import base64
 
-
+print("made with love by Zach Lima <3")
 #bot id, generate this when going to soecific group 
 botID = os.environ["GROUPME_BOT_ID"]
 
