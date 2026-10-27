@@ -1,13 +1,14 @@
 import requests
 import os
 from flask import Flask, jsonify, request
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 
 
-#bot id, generate this when going to soecific group
-botID = "af9657d944b5151be2b8689846" 
-
+#bot id, generate this when going to soecific group 
+botID = os.environ["GROUPME_BOT_ID"]
 
 def SendMessage(textToSend):
     payload = {"bot_id": botID, "text": textToSend}
@@ -49,8 +50,6 @@ def groupme_callback():
         SendMessage(f"Pong! Hello {senderName}.")
 
     return "OK", 200
-
-
 
 
 #MAIN LINE
